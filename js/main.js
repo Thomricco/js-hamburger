@@ -1,16 +1,11 @@
-const boxElement = document.getElementsByClassName(`hamburger-menu`)
-const button = document.getElementsByClassName(`close`)
+const boxElement = document.querySelector(`.hamburger-menu`)
+const button = document.querySelector(`.header-right`)
+const button2 = document.querySelector(`.close`)
 
 button.addEventListener('click', function () {
-    clickCounter++; // alias di clickCounter += 1;
+    boxElement.classList.add('active');
+})
 
-    // se clickCounter è dispari, mostro il box
-    if (clickCounter % 2 !== 0) {
-        boxElement.classList.remove('hamburger-menu');
-        boxElement.classList.add('hamburger-menu.active');
-    } else {
-        // se clickCounter è pari, nascono il box
-        boxElement.classList.remove('hamburger-menu');
-        boxElement.classList.add('hamburger-menu.active');
-    }
+button2.addEventListener('click', function () {
+    boxElement.classList.remove('active');
 })
